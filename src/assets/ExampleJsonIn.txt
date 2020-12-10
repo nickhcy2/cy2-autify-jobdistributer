@@ -1,0 +1,67 @@
+[
+    {
+        "uuid": "uuid-with-timestamp",
+        "module": "frontend",
+        "name": "name-example",
+        "description": "description",
+        "evariables": {
+            "localhostable": true,
+            "online-deployment": {
+                "active": true,
+                "deployment-environment": "link to the deployment environment",
+                "deployment-name": "deployment name",
+                "secret": "secrets"
+            },
+            "backend-api": {
+                "active": true,
+                "backend-connection-local": "api-connection-backend",
+                "backend-connection-deploy": "api-connection-backend",
+                "secret": "deploy-connection-secret"
+            },
+            "chatbot-connection": {
+                "chatbot-connection": "connection",
+                "client-token": "client-accesstoken"
+            },
+            "platform": "frontend-platform",
+            "tests": {
+                "system-testing": true,
+                "integration-testing": true,
+                "e2e-testing": true,
+                "unit-testing": true,
+                "smoke-testing": true,
+                "interface-testing": true
+            },
+            "views": [
+                "users",
+                "applications",
+                "chatbot"
+            ]
+        }
+    },
+    {
+        "uuid": "uuid-with-timestamp",
+        "module": "backend",
+        "name": "name-example",
+        "description": "description",
+        "evariables": {
+            "localhostable": true,
+            "online-deployment": {
+                "active": true,
+                "deployment-environment": "link to the deployment environment"
+            }
+        }
+    },
+    {
+        "uuid": "uuid-with-timestamp",
+        "module": "chatbot",
+        "name": "name-example",
+        "description": "description",
+        "evariables": {
+            "localhostable": true,
+            "online-deployment": {
+                "active": true,
+                "deployment-environment": "link to the deployment environment"
+            }
+        }
+    }
+]
