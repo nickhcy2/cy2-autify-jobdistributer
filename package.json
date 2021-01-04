@@ -19,12 +19,17 @@
   },
   "homepage": "https://github.com/nickhcy2/cy2-autify-jobdistributer#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "helmet": "^4.3.1"
   },
   "devDependencies": {
-    "@types/express": "^4.17.9",
-    "@types/node": "^14.14.11",
+    "@types/cors": "^2.8.9",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.0",
+    "@types/helmet": "^4.0.0",
+    "@types/node": "^14.14.19",
     "nodemon": "^2.0.6",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.2"
