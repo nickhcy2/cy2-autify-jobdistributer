@@ -20,7 +20,6 @@ class JobCreator implements iJobCreator {
     //Send the actual json with an api call to an external service async TODO use 'promise' to make the an array of api calls
     postData() {
         this.jobs.forEach(element => {
-            // var xhr = new XMLHttpRequest();
             var customurl;
             switch (element.module) {
                 case    'Frontend': customurl = '3002';   break;
@@ -28,18 +27,17 @@ class JobCreator implements iJobCreator {
                 case    'Chatbot' : customurl = '3004';   break;
                 default:                                  break;
             }
-            var url = "http://localhost:" + customurl + "/api";
-            // xhr.open("POST", url, true);
-            // xhr.setRequestHeader("Content-Type", "application/json");
-            // xhr.onreadystatechange = function () {
-            //     if (xhr.readyState === 4 && xhr.status === 200) {
-            //         var json = JSON.parse(xhr.responseText);
-            //     }
-            // };
-            var data = JSON.stringify(element);
-            //xhr.send(data);
-            console.log(data)
-            console.log(url)
+            var url = "http://localhost:" + customurl + "/";
+            try {
+                if(element.active == true){
+                    var data = JSON.stringify(element);
+                    console.log(data)
+                    console.log(url)
+                }
+            } catch (error) {
+                console.log(error + "Hello world")
+            }
+           
         });
     }
 

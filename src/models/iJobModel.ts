@@ -4,4 +4,5 @@ export interface JobModel {
     name: string;
     description: string;
     evariables: object;
+    active: boolean;
 }
