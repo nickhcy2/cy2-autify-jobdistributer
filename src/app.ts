@@ -24,7 +24,7 @@ const server = new Server();
 
 server.app.use(express.json());
 server.app.use(helmet());
-var corsConst = cors({origin: true})
+var corsConst = cors(corsOptions)
 server.app.use(corsConst);
 server.app.use(express.urlencoded({ extended: true }));
 server.app.use('/api', server.router);
@@ -36,6 +36,6 @@ server.app.use((err: ErrorHandler, req: Request, res: Response, next: NextFuncti
     });
 });
 
-((port = process.env.APP_PORT || 5000) => {
+((port = process.env.APP_PORT || 3001) => {
     server.app.listen(port, () => console.log(`> Listening on port ${port}`));
 })();

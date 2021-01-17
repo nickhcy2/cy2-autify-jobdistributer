@@ -1,66 +1,69 @@
 [
     {
-        "uuid": "uuid-with-timestamp",
-        "module": "frontend",
-        "name": "name-example",
-        "description": "description",
+        "uuid": "e87dfa67-ccee-4634-bb6b-cbc7042e9946",
+        "module": "Frontend",
+        "name": "Test",
+        "description": "3002",
+        "active": true,
         "evariables": {
-            "localhostable": true,
+            "localhostable": false,
             "online-deployment": {
-                "active": true,
-                "deployment-environment": "link to the deployment environment",
-                "deployment-name": "deployment name",
+                "active": false,
+                "deployment-environment": "",
+                "deployment-name": "",
                 "secret": "secrets"
             },
             "backend-api": {
-                "active": true,
-                "backend-connection-local": "api-connection-backend",
-                "backend-connection-deploy": "api-connection-backend",
-                "secret": "deploy-connection-secret"
+                "active": false,
+                "backend-connection-local": "",
+                "backend-connection-deploy": "",
+                "secret": ""
             },
             "chatbot-connection": {
-                "chatbot-connection": "connection",
-                "client-token": "client-accesstoken"
+                "chatbot-connection": "",
+                "client-token": ""
             },
-            "platform": "frontend-platform",
+            "platform": "vue",
             "tests": {
-                "system-testing": true,
-                "integration-testing": true,
-                "e2e-testing": true,
-                "unit-testing": true,
-                "smoke-testing": true,
-                "interface-testing": true
+                "systemtesting": true,
+                "integrationtesting": false,
+                "e2etesting": false,
+                "unittesting": false,
+                "smoketesting": false,
+                "interfacetesting": false
             },
             "views": [
-                "users",
-                "applications",
-                "chatbot"
+                {
+                    "name": "test"
+                }
             ]
         }
     },
     {
-        "uuid": "uuid-with-timestamp",
-        "module": "backend",
-        "name": "name-example",
-        "description": "description",
+        "uuid": "bad6d538-125d-422b-93d7-9e9e5a84b5f3",
+        "module": "Backend",
+        "name": "Test",
+        "description": "3003",
+        "active": false,
         "evariables": {
-            "localhostable": true,
+            "localhostable": false,
             "online-deployment": {
-                "active": true,
-                "deployment-environment": "link to the deployment environment"
+                "active": false,
+                "deployment-environment": ""
             }
         }
     },
     {
-        "uuid": "uuid-with-timestamp",
-        "module": "chatbot",
-        "name": "name-example",
-        "description": "description",
+        "uuid": "b6961cfa-7477-4066-ae80-d5345e1f0f8a",
+        "module": "Chatbot",
+        "name": "Test",
+        "description": "3004",
+        "active": false,
         "evariables": {
-            "localhostable": true,
+            "localhostable": false,
             "online-deployment": {
-                "active": true,
-                "deployment-environment": "link to the deployment environment"
+                "active": false,
+                "deployment-environment": ""
             }
         }
     }

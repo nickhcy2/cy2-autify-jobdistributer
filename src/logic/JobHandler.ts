@@ -1,5 +1,7 @@
 import { iJobCreator } from './iJobHandler';
 import { JobModel } from "../models/iJobModel";
+import JobBuilder from "./JobBuilder";
+import axios from 'axios';
 
 class JobCreator implements iJobCreator {
     private jobs: JobModel[] = [];
@@ -8,45 +10,43 @@ class JobCreator implements iJobCreator {
     jobGenerator(reqBody: JobModel[]): void{
         this.jobs = reqBody
         for(let element of this.jobs){
-            element.name = this.nameGenerator(element.name, element.module)
-                /*TODO 
-                    change ports of connections for online hosting deployment
-                */
-               //console.log(element);
+            element.name = JobBuilder.nameGenerator(element.name, element.module)
         }
         this.postData();
     }
 
     //Send the actual json with an api call to an external service async TODO use 'promise' to make the an array of api calls
     postData() {
-        this.jobs.forEach(element => {
-            var customurl;
-            switch (element.module) {
-                case    'Frontend': customurl = '3002';   break;
-                case    'Backend' : customurl = '3003';   break;
-                case    'Chatbot' : customurl = '3004';   break;
-                default:                                  break;
-            }
-            var url = "http://localhost:" + customurl + "/";
-            try {
-                if(element.active == true){
-                    var data = JSON.stringify(element);
-                    console.log(data)
-                    console.log(url)
+        try{
+            this.jobs.forEach(element => {
+                var customurl;
+                switch (element.module) {
+                    case    'Frontend': customurl = '3002';   break;
+                    case    'Backend' : customurl = '3003';   break;
+                    case    'Chatbot' : customurl = '3004';   break;
+                    default:                                  break;
                 }
-            } catch (error) {
-                console.log(error + "Hello world")
-            }
-           
-        });
-    }
-
-    //Generate a custom name that will be consistent for all projects made with this system
-    nameGenerator(name: string, module: string): string{
-        var newname = name + "-" + module + "-autify";
-        newname.toLowerCase;
-        return newname;
+                var url = "http://localhost:" + customurl + "/";
+                var res
+                if(element.active == true){
+                    var req = JSON.stringify(element)
+                    axios.post(url, req)
+                    .then(function (response) {
+                        res = response;
+                    })
+                    .catch(function (error) {
+                        res = error;
+                    });
+                    var data = JSON.stringify(element);
+                    console.log(req)
+                }
+            });
+        }catch (error){
+            console.log(error)
+        }
     }
 }
 
 export = new JobCreator
+
+
