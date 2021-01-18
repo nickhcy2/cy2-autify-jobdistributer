@@ -1,0 +1,10 @@
+import { JobModel } from '../../src/models/iJobModel'
+
+class jsonExamples 
+{
+    public jobsActive: JobModel[] = JSON.parse('[{"uuid":"uuid-with-timestamp","module":"Frontend","name":"cy2-autify-product-frontend-name-example","description":"description","active":true,"evariables":{}},{"uuid":"uuid-with-timestamp","module":"Backend","name":"cy2-autify-product-backend-name-example","description":"description","active":true,"evariables":{}},{"uuid":"uuid-with-timestamp","module":"Chatbot","name":"cy2-autify-product-chatbot-name-example","description":"description","active":true,"evariables":{}}]')
+    public jobsDeactive: JobModel[] = JSON.parse('[{"uuid":"uuid-with-timestamp","module":"Frontend","name":"cy2-autify-product-frontend-name-example","description":"description","active":false,"evariables":{}},{"uuid":"uuid-with-timestamp","module":"Backend","name":"cy2-autify-product-backend-name-example","description":"description","active":false,"evariables":{}},{"uuid":"uuid-with-timestamp","module":"Chatbot","name":"cy2-autify-product-chatbot-name-example","description":"description","active":false,"evariables":{}}]')
+    public jobsCorrectConnection: JobModel[] = JSON.parse('[{"uuid":"uuid-with-timestamp","module":"TestCase","name":"cy2-autify-product-frontend-name-example","description":"description","active":true,"evariables":{}},{"uuid":"uuid-with-timestamp","module":"Frontend","name":"cy2-autify-product-frontend-name-example","description":"description","active":false,"evariables":{}},{"uuid":"uuid-with-timestamp","module":"Backend","name":"cy2-autify-product-backend-name-example","description":"description","active":false,"evariables":{}},{"uuid":"uuid-with-timestamp","module":"Chatbot","name":"cy2-autify-product-chatbot-name-example","description":"description","active":false,"evariables":{}}]')
+}
+
+export default jsonExamples

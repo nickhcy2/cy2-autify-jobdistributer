@@ -1,0 +1,5 @@
+APP_PORT="3001"
+SERVER_CON_URL_FRONTEND = "http://localhost:3002/"
+SERVER_CON_URL_BACKEND = "http://localhost:3003/"
+SERVER_CON_URL_CHATBOT = "http://localhost:3004/"
+SERVER_CON_URL_TESTCASE = "http://localhost:3001/api/test"

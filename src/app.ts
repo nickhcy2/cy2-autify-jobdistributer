@@ -24,7 +24,7 @@ const server = new Server();
 
 server.app.use(express.json());
 server.app.use(helmet());
-var corsConst = cors(corsOptions)
+var corsConst = cors()
 server.app.use(corsConst);
 server.app.use(express.urlencoded({ extended: true }));
 server.app.use('/api', server.router);

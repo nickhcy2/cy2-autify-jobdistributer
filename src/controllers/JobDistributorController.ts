@@ -2,6 +2,8 @@ import ErrorHandler from '../models/ErrorHandler';
 import { JobModel } from '../models/iJobModel';
 import JobHandler from '../logic/JobHandler';
 
+const jobHandler = new JobHandler
+
 class JobDistributorController {
 
     defaultMethod(){
@@ -9,7 +11,7 @@ class JobDistributorController {
     }
 
     distributeMethod(reqBody: JobModel[]){
-        JobHandler.jobGenerator(reqBody)
+        jobHandler.jobGenerator(reqBody)
         return{
             text: `You've reached the ${this.constructor.name} default method`
         };

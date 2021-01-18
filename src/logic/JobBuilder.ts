@@ -8,8 +8,6 @@ class JobBuilder implements iJobBuilder
         newname.toLowerCase;
         return newname;
     }
-
-
 }
 
-export = new JobBuilder
+export default JobBuilder
